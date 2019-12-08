@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dhbwka.wwi.vertsys.javaee</groupId>
+    <artifactId>JUnit_Beispiel</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>JUnit_Beispiel</name>
+
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+        <!-- TomEE-Embedded für JUnit funktioniert in dieser Konfiguration erst ab JEE-Version 8 -->
+        <!-- NetBeans trägt hier leider per Default 7.0 ein, weil NetBeans 10 JEE 8 noch nicht kennt -->
+        <jee.version>8.0</jee.version>
+        
+        <!-- Komponentenversionen für unsere Unit Tests -->
+        <junit.version>5.4.0</junit.version>
+        <tomee.version>8.0.0-M2</tomee.version>
+        <derby.version>10.14.2.0</derby.version>
+        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+        <openejb-javaagent.version>4.7.5</openejb-javaagent.version>
+    </properties>
+    
+    <dependencies>
+        <!-- Abhängigkeiten für Jakarta EE generell (werden immer gebraucht) -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>${jee.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- TomEE-Laufzeitumgebung für die JUnit-Tests (werden nur für die Tests gebraucht) -->
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>apache-tomee</artifactId>
+            <version>${tomee.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>${derby.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Abhängigkeiten für JUnit5 (werden auch nur für die Tests gebraucht) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin für korrekten JUnit5-Support !!!!! -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                
+                <!--
+                    Noch mehr Vodoozauber für TomEE in JUnit ("openejb-javaagent" muss beim Start von Java
+                    als Parameter mitgegeben werden. Weiter unten befindet sich ein Zauberspruch, der die
+                    Datei beim Compilieren des Projekts ins Zielverzeichnis kopiert. Habe ich schon mal erwähnt,
+                    dass in Java viele Dinge furchtbar over-engineered sind?!)
+                -->
+                <configuration>
+                    <argLine>"-javaagent:${project.basedir}/target/openejb-javaagent-${openejb-javaagent.version}.jar"</argLine>
+                </configuration>
+            </plugin>
+        
+            <!--
+                Sonstige von NetBeans automatisch hinzugefügte Plugins.
+                Zur Sicherheit hier mal aktuellere Versionsnummer eingetragen. (Stand: 01.03.2019)
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArguments>
+                        <endorseddirs>${endorsed.dir}</endorseddirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${endorsed.dir}</outputDirectory>
+                            <silent>true</silent>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>javax</groupId>
+                                    <artifactId>javaee-endorsed-api</artifactId>
+                                    <version>7.0</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    
+                    <!-- MAGIE: Kopiere TomEE Java Agent nach target/, damit TomEE in den Unit Tests überhaupt startet -->
+                    <execution>
+                        <id>copy</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.openejb</groupId>
+                                    <artifactId>openejb-javaagent</artifactId>
+                                    <version>${openejb-javaagent.version}</version>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <!-- MAGIE ENDE -->
+                    
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

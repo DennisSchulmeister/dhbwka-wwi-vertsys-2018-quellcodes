@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>👽 REST-Webservice-Aufgabe: Übersicht</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <style>
+            html {
+                font-family: sans-serif;
+                font-size: 12pt;
+                
+                /* https://pixabay.com/de/photos/enge-kontakte-3-grad-gestohlene-2853070/ */
+                background-image: url(bg.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            
+            body {
+                max-width: 50em;
+                margin: 0 auto;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                
+                border-radius: 0.5em;
+                background: rgba(255,255,255, 0.8);
+                padding: 1em;
+            }
+            
+            h1, h2, h3, .thead {
+                color: crimson;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            }
+            
+            .thead {
+                font-weight: bold;
+                font-size: 120%;
+            }
+            
+            .thead td {
+                padding-top: 1em;
+            }
+            
+            th, td {
+                padding-right: 1em;
+                text-align: left;
+            }
+            
+            th {
+                padding-top: 1em;
+            }
+            
+            p {
+                 text-align: justify;
+                 hyphens: auto;
+            }
+            
+            .verb {
+                padding-right: 0.5em;
+                text-align: right;
+            }
+            
+            .code {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>REST-Webservice-Aufgabe: Übersicht</h1>
+        
+        <table>
+            <!-- =========== -->
+            <!-- ALLGEMEINES -->
+            <!-- =========== -->
+            <tr class="thead">
+                <td colspan="3">
+                    Allgemeines
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    WADL-Beschreibung
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/?_wadl">api/?_wadl</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Auto-Generierte API-Dokumentation
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="apidoc.html">apidoc.html</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Demodaten erzeugen
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/CreateDemoData/">api/CreateDemoData/</a>
+                </td>
+            </tr>
+            
+            <!-- ====== -->
+            <!-- SERIEN -->
+            <!-- ====== -->
+            <tr class="thead">
+                <td colspan="3">
+                    Serien
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Alle Datensätze lesen
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Series/">api/Series/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Alle Star-Trek-Serien
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Series/?query=Star%20Trek">api/Series/?query=Star%20Trek</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Details zur Serie „Akte X”
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Series/X-Files/">api/Series/X-Files/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Serie mit der ID ST-TNG speichern
+                </td>
+                <td class="verb">
+                    PUT
+                </td>
+                <td>
+                    <a href="api/Series/ST-TNG/">api/Series/ST-TNG/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Serie mit der ID ST-TNG löschen
+                </td>
+                <td class="verb">
+                    DELETE
+                </td>
+                <td>
+                    <a href="api/Series/ST-TNG/">api/Series/ST-TNG/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Neue Serie speichern
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="api/Series/">api/Series/</a>
+                </td>
+            </tr>
+            
+            <!-- ======== -->
+            <!-- STAFFELN -->
+            <!-- ======== -->
+            <tr class="thead">
+                <td colspan="3">
+                    Staffeln
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Alle Staffeln von Akte X
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Series/X-Files/Season/">api/Series/X-Files/Season/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Details zur Staffel 10 von Akte X
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Series/X-Files/Season/10/">api/Series/X-Files/Season/10/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Staffel 9 von Akte X speichern
+                </td>
+                <td class="verb">
+                    PUT
+                </td>
+                <td>
+                    <a href="api/Series/X-Files/Season/9/">api/Series/X-Files/Season/9/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Staffel 9 von Akte X löschen
+                </td>
+                <td class="verb">
+                    DELETE
+                </td>
+                <td>
+                    <a href="api/Series/X-Files/Season/9/">api/Series/X-Files/Season/9/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Neue Staffel zu Akte X speichern
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="api/Series/">api/Series/X-Files/Season/</a>
+                </td>
+            </tr>
+            
+            <!-- ======== -->
+            <!-- BENUTZER -->
+            <!-- ======== -->
+            <tr class="thead">
+                <td colspan="3">
+                    Benutzer
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Neuen Benutzer registrieren
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="api/Users/">api/Users/</a>
+                </td>
+            </tr>
+        </table>
+        
+        <p style="margin-top: 2em;">
+            Um einen Benutzer anzulegen, muss eine POST-Anfrage mit folgendem JSON-Dokument
+            an den Endpunkt <tt>api/Users/</tt> geschickt werden (z.B. mit SoapUI):
+        </p>
+        <p class="code">
+            { <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp; "username": "...", <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp; "password": "...", <br/>
+            }
+        </p>
+        <p>
+            Standardmäßig sind jedoch alle Anfragen (auch ändernde Anfragen) auch ohne Benutzer
+            zulässig, damit du den Webservice einfacher testen kannst. Willst du hingegen
+            unter Echtbedingungen testen, musst du den Zugriffsschutz aktivieren, indem du
+            in der <tt>web.xml</tt> an den gekkzeichneten Stellen den String <tt>__DISABLED__</tt>
+            entfernst. Danach sind keine ändernden Zugriffe mehr ohne gültigen Benutzer und ohne
+            gesicherte HTTPS-Verbindung (Port 8443) möglich. Die Authentifizierung erfolgt per
+            HTTP Basic Auth.
+        </p>
+        <p>
+            Möglicherweise zickt dann aber leider SoapUI wegen dem selbst-signierten SSL-Zertifikat
+            des Applikationsservers rum. In diesem Fall könntest du z.B. Curl (Open Source, separater
+            Download) verwenden, um auf der Kommandozeile wie folgt eine Testanfrage abzusetzen:
+        </p>
+        <p class="code">
+            curl -i -k -X DELETE -u username:password https://localhost:8443/REST_Server_Aufgabe/api/Series/ST-TNG/
+        </p>
+    </body>
+</html>

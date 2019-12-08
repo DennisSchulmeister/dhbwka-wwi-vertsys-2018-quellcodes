@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.web.clientproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/clientside-project/1">
+            <name>SmartHome_Dashboard</name>
+        </data>
+        <libraries xmlns="http://www.netbeans.org/ns/cdnjs-libraries/1">
+            <library name="Chart.js" version="2.7.2">
+                <file localPath="public_html/libs/Chart.js/Chart.bundle.js" path="Chart.bundle.js"/>
+                <file localPath="public_html/libs/Chart.js/Chart.bundle.min.js" path="Chart.bundle.min.js"/>
+                <file localPath="public_html/libs/Chart.js/Chart.js" path="Chart.js"/>
+                <file localPath="public_html/libs/Chart.js/Chart.min.js" path="Chart.min.js"/>
+            </library>
+            <library name="jquery" version="3.3.1">
+                <file localPath="public_html/libs/jquery/core.js" path="core.js"/>
+                <file localPath="public_html/libs/jquery/jquery.js" path="jquery.js"/>
+                <file localPath="public_html/libs/jquery/jquery.min.js" path="jquery.min.js"/>
+                <file localPath="public_html/libs/jquery/jquery.min.map" path="jquery.min.map"/>
+                <file localPath="public_html/libs/jquery/jquery.slim.js" path="jquery.slim.js"/>
+                <file localPath="public_html/libs/jquery/jquery.slim.min.js" path="jquery.slim.min.js"/>
+                <file localPath="public_html/libs/jquery/jquery.slim.min.map" path="jquery.slim.min.map"/>
+            </library>
+            <library name="paho-mqtt" version="1.0.2">
+                <file localPath="public_html/libs/paho-mqtt/mqttws31.js" path="mqttws31.js"/>
+                <file localPath="public_html/libs/paho-mqtt/mqttws31.min.js" path="mqttws31.min.js"/>
+                <file localPath="public_html/libs/paho-mqtt/mqttws31.min.js.map" path="mqttws31.min.js.map"/>
+            </library>
+            <library name="twitter-bootstrap" version="4.0.0">
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-grid.css" path="css/bootstrap-grid.css"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-grid.css.map" path="css/bootstrap-grid.css.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-grid.min.css" path="css/bootstrap-grid.min.css"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-grid.min.css.map" path="css/bootstrap-grid.min.css.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-reboot.css" path="css/bootstrap-reboot.css"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-reboot.css.map" path="css/bootstrap-reboot.css.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-reboot.min.css" path="css/bootstrap-reboot.min.css"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap-reboot.min.css.map" path="css/bootstrap-reboot.min.css.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap.css" path="css/bootstrap.css"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap.css.map" path="css/bootstrap.css.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap.min.css" path="css/bootstrap.min.css"/>
+                <file localPath="public_html/libs/twitter-bootstrap/css/bootstrap.min.css.map" path="css/bootstrap.min.css.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.bundle.js" path="js/bootstrap.bundle.js"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.bundle.js.map" path="js/bootstrap.bundle.js.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.bundle.min.js" path="js/bootstrap.bundle.min.js"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.bundle.min.js.map" path="js/bootstrap.bundle.min.js.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.js" path="js/bootstrap.js"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.js.map" path="js/bootstrap.js.map"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.min.js" path="js/bootstrap.min.js"/>
+                <file localPath="public_html/libs/twitter-bootstrap/js/bootstrap.min.js.map" path="js/bootstrap.min.js.map"/>
+            </library>
+        </libraries>
+    </configuration>
+</project>

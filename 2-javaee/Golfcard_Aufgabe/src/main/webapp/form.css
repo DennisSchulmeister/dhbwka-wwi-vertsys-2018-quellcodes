@@ -1,0 +1,58 @@
+/*
+Copyright © 2018 Dennis Schulmeister-Zimolong
+
+E-Mail: dhbw@windows3.de
+Webseite: https://www.wpvs.de/
+
+Dieser Quellcode ist lizenziert unter einer
+Creative Commons Namensnennung 4.0 International Lizenz.
+*/
+
+.formline {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.formline > * {
+    flex-shrink: 1;
+    margin: 0.5em;
+}
+
+.grow {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+form label {
+    color: crimson;
+}
+
+form label.total {
+    color: initial;
+    font-weight: bold;
+}
+
+form label .required {
+    color: darkred;
+}
+
+input,
+textarea,
+select {
+    border: 1px solid #bebebe;
+    padding: 0.5em;
+    margin: 0;
+    outline: none;
+    background: white;
+    width: 100%;
+}
+
+textarea {
+    height: 12em;
+}
+
+form .errors {
+    margin-top: 1em;
+    color: red;
+}

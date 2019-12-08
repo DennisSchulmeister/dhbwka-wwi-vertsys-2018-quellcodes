@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ticket2Rock: Server</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <style>
+            h1 {
+                color: crimson;
+                text-shadow: 1px 1px 2px black;
+            }
+            
+            html {
+                /* https://pixabay.com/de/konzert-leistung-publikum-lightshow-336695/ */
+                background-image: url(bg.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+                
+                font-family: sans;
+                font-size: 14pt;
+            }
+            
+            body {
+                background: rgba(255,255,255, 0.8);
+                margin: 2em;
+                padding: 1em;
+                border-radius: 0.5em;
+            }
+            
+            h1 {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Server läuft!</h1>
+        <p>
+            <b>EJB Name</b> <br/>
+            TicketService <br/>
+        </p>
+        <p>
+            <b>JNDI Pfade</b> <br/>
+            Ticket2Rock_Server/TicketServiceRemote <br/>
+            global/Ticket2Rock_Server/TicketService!dhbwka.wwi.vertsys.javaee.ticket2rock_interfaces.remote.TicketServiceRemote <br/>
+            global/Ticket2Rock_Server/TicketService <br/>
+        </p>
+    </body>
+</html>

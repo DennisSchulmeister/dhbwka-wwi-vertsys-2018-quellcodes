@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>🎵 Lösung: Ticketserver-Webservices</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style>
+            html {
+                font-family: sans-serif;
+                font-size: 12pt;
+
+                /* https://pixabay.com/de/photos/musik-konzert-affe-gitarre-b%C3%BChne-3507317/ */
+                background-image: url(bg.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100%;
+            }
+
+            body {
+                margin-top: 1em;
+                margin-bottom: 1em;
+
+                padding: 1em;
+                border-radius: 0.5em;
+                background: rgba(255,255,255, 0.75);
+            }
+
+            h1, h2, h3 {
+                color: crimson;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+                margin: 0;
+                margin-top: 1em;
+            }
+
+            h2, h3 {
+                color: darkred;
+            }
+
+            .thead {
+                font-weight: bold;
+                font-size: 120%;
+                text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+            }
+
+            .thead td {
+                padding-top: 1em;
+            }
+
+            th, td {
+                padding-right: 1em;
+                text-align: left;
+            }
+
+            p {
+                text-align: justify;
+                hyphens: auto;
+            }
+
+            .verb {
+                padding-right: 0.5em;
+                text-align: right;
+            }
+
+            .code {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lösung: Ticketserver-Webservices</h1>
+
+        <table>
+            <!-- ================ -->
+            <!-- SOAP-Webservices -->
+            <!-- ================ -->
+            <tr>
+                <td colspan="3">
+                    <h2>SOAP-Webservice</h2>
+                </td>
+            </tr>
+
+            <!-- ......... -->
+            <!-- DEMODATEN -->
+            <!-- ......... -->
+            <tr class="thead">
+                <td colspan="3">
+                    Demodaten
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    WSDL-Beschreibung
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="webservices/Ticketserver_Webservices_Loesung/DemoDataSoapWebservice?wsdl">webservices/Ticketserver_Webservices_Loesung/DemoDataSoapWebservice?wsdl</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Webservice-Aufruf
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="webservices/Ticketserver_Webservices_Loesung/DemoDataSoapWebservice">webservices/Ticketserver_Webservices_Loesung/DemoDataSoapWebservice</a>
+                </td>
+            </tr>
+
+            <!-- ...... -->
+            <!-- EVENTS -->
+            <!-- ...... -->
+            <tr class="thead">
+                <td colspan="3">
+                    Events
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    WSDL-Beschreibung
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="webservices/Ticketserver_Webservices_Loesung/EventSoapWebservice?wsdl">webservices/Ticketserver_Webservices_Loesung/EventSoapWebservice?wsdl</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Webservice-Aufruf
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="webservices/Ticketserver_Webservices_Loesung/EventSoapWebservice">webservices/Ticketserver_Webservices_Loesung/EventSoapWebservice</a>
+                </td>
+            </tr>
+            
+            <!-- .......... -->
+            <!-- TICKETKAUF -->
+            <!-- .......... -->
+            <tr class="thead">
+                <td colspan="3">
+                    Ticketkauf
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    WSDL-Beschreibung
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="webservices/Ticketserver_Webservices_Loesung/TicketSoapWebservice?wsdl">webservices/Ticketserver_Webservices_Loesung/TicketSoapWebservice?wsdl</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Webservice-Aufruf
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="webservices/Ticketserver_Webservices_Loesung/TicketSoapWebservice">webservices/Ticketserver_Webservices_Loesung/TicketSoapWebservice</a>
+                </td>
+            </tr>
+
+            <!-- =============== -->
+            <!-- REST-Webservice -->
+            <!-- =============== -->
+            <tr>
+                <td colspan="3">
+                    <h2>REST-Webservice</h2>
+                </td>
+            </tr>
+
+            <!-- ........... -->
+            <!-- ALLGEMEINES -->
+            <!-- ........... -->
+            <tr class="thead">
+                <td colspan="3">
+                    Allgemeines
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    WADL-Beschreibung
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/?_wadl">api/?_wadl</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Auto-Generierte API-Dokumentation
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="apidoc.html">apidoc.html</a>
+                </td>
+            </tr>
+            
+            <!-- ......... -->
+            <!-- DEMODATEN -->
+            <!-- ......... -->
+            <tr class="thead">
+                <td colspan="3">
+                    Demodaten
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Demodaten erzeugen
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/CreateDemoData/">api/CreateDemoData/</a>
+                </td>
+            </tr>
+
+            <!-- ...... -->
+            <!-- EVENTS -->
+            <!-- ...... -->
+            <tr class="thead">
+                <td colspan="3">
+                    Events
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Alle Datensätze lesen
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Events/">api/Events/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Alle Events mit Steve Hacket lesen
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Events/?query=Steve%20Hacket">api/Events/?query=Steve%20Hacket</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Event mit der ID 10 lesen
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Events/10/">api/Events/10/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Event mit der ID 10 speichern
+                </td>
+                <td class="verb">
+                    PUT
+                </td>
+                <td>
+                    <a href="api/Events/10/">api/Events/10/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Event mit der ID 10 löschen
+                </td>
+                <td class="verb">
+                    DELETE
+                </td>
+                <td>
+                    <a href="api/Events/10/">api/Events/10/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Neues Event speichern
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="api/Events/">api/Events/</a>
+                </td>
+            </tr>
+
+            <!-- .......... -->
+            <!-- TICKETKAUF -->
+            <!-- .......... -->
+            <tr class="thead">
+                <td colspan="3">
+                    Ticketkauf
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ticket mit der ID 20 lesen
+                </td>
+                <td class="verb">
+                    GET
+                </td>
+                <td>
+                    <a href="api/Tickets/20/">api/Tickets/20/</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Neues Ticket kaufen
+                </td>
+                <td class="verb">
+                    POST
+                </td>
+                <td>
+                    <a href="api/Tickets/">api/Tickets/</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

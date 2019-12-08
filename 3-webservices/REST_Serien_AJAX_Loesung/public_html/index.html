@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>👽 REST-Webservice-Lösung: AJAX-Aufruf</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Alle meine Fernsehserien</h1>
+
+        <input type="text" id="suchfeld" value="Star Trek">
+        <button onclick="datenAbrufen()">Abrufen</button>
+
+        <div>
+            <div id="ergebnis" class="unsichtbar"></div>
+        </div>
+
+        <script>
+            async function datenAbrufen() {
+                // Zuvor sichtbaren Inhalt verwerfen
+                let suchfeld = document.getElementById("suchfeld");
+                let ergebnisDiv = document.getElementById("ergebnis");
+
+                ergebnisDiv.textContent = "Suche läuft …";
+                ergebnisDiv.classList.remove("unsichtbar");
+
+                // Neue Daten vom Server abrufen
+                let url = "http://localhost:8080/REST_Serien_Server_Loesung/api/Series/"
+                        + "?query=" + encodeURI(suchfeld.value);
+
+                let antwort = await fetch(url, {
+                    method: "get",
+                    headers: {
+                        "accept": "application/json"
+                    }
+                });
+
+                ergebnisDiv.innerHTML = "";
+                let series = await antwort.json();
+
+                // Abgerufene Daten anzeigen
+                series.forEach(series => {
+                    let html = `
+                        <div>
+                            <b>Id:</b> ${series.id} <br/>
+                            <b>Title:</b> ${series.title} <br/>
+                            <b>Genre:</b> ${series.genre} <br/>
+                            <b>Land:</b> ${series.country} <br/>
+                            <b>Jahre:</b> ${series.fromYear} bis ${series.toYear} <br/>
+                            <b>Staffeln:</b> ${series.numberOfSeasons} <br/>
+                            <b>Episoden:</b> ${series.numberOfEpisodes} <br/>
+                        </div>
+                    `;
+
+                    ergebnisDiv.innerHTML += html;
+                });
+            }
+        </script>
+    </body>
+</html>

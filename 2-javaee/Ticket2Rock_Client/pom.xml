@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>dhbwka.wwi.vertsys.javaee</groupId>
+    <artifactId>Ticket2Rock_Client</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        
+        <ticket2rock_interfaces.version>1.0-SNAPSHOT</ticket2rock_interfaces.version>
+        <tomee.version>8.0.0-M1</tomee.version>
+    </properties>
+    
+    <dependencies>
+        <!-- Maven-Projekt mit den Interfaces für Ticket2Rock -->
+        <dependency>
+            <groupId>dhbwka.wwi.vertsys.javaee</groupId>
+            <artifactId>Ticket2Rock_Interfaces</artifactId>
+            <version>${ticket2rock_interfaces.version}</version>
+        </dependency>
+        
+        <!-- OpenEJB-Client für den Remote-Zugriff auf einen TomEE-Server -->
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>openejb-client</artifactId>
+            <version>${tomee.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>openejb-core</artifactId>
+            <version>${tomee.version}</version>
+        </dependency>
+    </dependencies>
+</project>

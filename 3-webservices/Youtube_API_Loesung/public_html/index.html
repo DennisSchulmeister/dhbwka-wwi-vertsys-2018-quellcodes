@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+Copyright © 2018 Dennis Schulmeister-Zimolong
+
+E-Mail: dhbw@windows3.de
+Webseite: https://www.wpvs.de/
+
+Dieser Quellcode ist lizenziert unter einer
+Creative Commons Namensnennung 4.0 International Lizenz.
+-->
+<html>
+    <head>
+        <title>🎞️ REST-Aufruf der Youtube Search API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Meine kleine Youtube-Suche</h1>
+
+        <input type="text" id="suchfeld" value="Asterix und Obelix">
+        <button onclick="sucheVideos()">Suchen</button>
+
+        <div>
+            <div id="ergebnis" class="unsichtbar"></div>
+        </div>
+
+        <script>
+            let api_key = "AIzaSyCd4khSRxFNZA_naaF1o5MIdbZkRlOKqO4";
+
+            async function sucheVideos() {
+                let suchfeld = document.getElementById("suchfeld");
+                let ergebnisDiv = document.getElementById("ergebnis");
+
+                ergebnisDiv.textContent = "Suche läuft …";
+                ergebnisDiv.classList.remove("unsichtbar");
+
+                let url = "https://www.googleapis.com/youtube/v3/search"
+                        + "?q=" + encodeURI(suchfeld.value)
+                        + "&part=snippet"
+                        + "&maxResults=25"
+                        + "&key=" + encodeURI(api_key);
+
+                let antwort = await fetch(url, {
+                    method: "get",
+                    headers: {
+                        "accept": "application/json"
+                    }
+                });
+
+                ergebnisDiv.innerHTML = "";
+                let json = await antwort.json();
+
+                json.items.forEach(item => {
+                    let html = `<div>`
+                            + `<img src="${item.snippet.thumbnails.default.url}">`
+                            + `${item.snippet.title}`
+                            + `</div>`;
+
+                    ergebnisDiv.innerHTML += html;
+                });
+            }
+        </script>
+    </body>
+</html>

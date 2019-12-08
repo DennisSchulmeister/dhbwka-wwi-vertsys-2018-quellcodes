@@ -1,0 +1,23 @@
+=================================
+Hinweise zum Berechtigungskonzept
+=================================
+
+Um dir den Einstieg so einfach wie möglich zu machen, sind die REST-Webservices
+in diesem Beispiel nicht mit Berechtigungen geschützt. In einer echten Anwendung
+hingegen würde man natürlich nicht zulassen, dass jeder Anwender selbst ohne
+sich anzumelden einfach beliebige Daten ändern darf. Du kannst die Prüfung der
+Berechtigungen daher ganz einfach aktivieren, um dir anzusehen, wie das geht.
+
+Gehe hierfür wie folgt vor:
+
+  Bearbeiten der Web Pages\WEB-INF\web.xml
+
+    Hier ist bereits alles fertig konfiguriert. Du musst lediglich in den
+    URLs das __DISABLED__ entfernen.
+
+  Ausprobieren
+
+    1. Webanwendung starten
+    2. Aufruf eines geschützten Services (z.B. CreateDemoData)
+    3. Mit SoapUI einen neuen Benutzer registrieren
+    4. Aufruf eines geschützten Services mit den richtigen Logindaten

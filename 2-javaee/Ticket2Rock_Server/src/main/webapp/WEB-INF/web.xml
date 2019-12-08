@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <!-- TomEE / OpenEJB: Der Remotezugriff erfolgt per HTTP über dieses Servlet -->
+    <!-- Andere Applikationsserver nutzen andere Mechanismem, um den Remotezugriff zu ermöglichen -->
+    <servlet>
+        <servlet-name>ServerServlet</servlet-name>
+        <servlet-class>org.apache.openejb.server.httpd.ServerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServerServlet</servlet-name>
+        <url-pattern>/ejb/*</url-pattern>
+    </servlet-mapping>
+</web-app>

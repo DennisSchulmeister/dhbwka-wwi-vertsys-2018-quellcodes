@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Copyright © 2018 Dennis Schulmeister-Zimolong
+
+E-Mail: dhbw@windows3.de
+Webseite: https://www.wpvs.de/
+
+Dieser Quellcode ist lizenziert unter einer
+Creative Commons Namensnennung 4.0 International Lizenz.
+-->
+<html>
+    <head>
+        <title>🎞️ REST-Aufruf der Youtube Search API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Meine kleine Youtube-Suche</h1>
+
+        <input type="text" id="suchfeld" value="Asterix und Obelix">
+        <button onclick="sucheVideos()">Suchen</button>
+
+        <div>
+            <div id="ergebnis" class="unsichtbar"></div>
+        </div>
+
+        <script>
+            let api_key = "AIzaSyCd4khSRxFNZA_naaF1o5MIdbZkRlOKqO4";
+
+            async function sucheVideos() {
+                let suchfeld = document.getElementById("suchfeld");
+                let ergebnisDiv = document.getElementById("ergebnis");
+
+                // TODO: Youtube-Suche aufrufen und Ergebnis anzeigen
+            }
+        </script>
+    </body>
+</html>

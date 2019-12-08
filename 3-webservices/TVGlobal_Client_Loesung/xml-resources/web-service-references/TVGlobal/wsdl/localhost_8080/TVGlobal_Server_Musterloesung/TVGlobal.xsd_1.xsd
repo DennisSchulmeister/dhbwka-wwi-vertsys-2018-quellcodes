@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.tvglobal_server.javaee.vertsys.wwi.dhbwka/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.tvglobal_server.javaee.vertsys.wwi.dhbwka/">
+
+<xs:element name="createNewProgram" type="tns:createNewProgram"/>
+
+<xs:element name="createNewProgramResponse" type="tns:createNewProgramResponse"/>
+
+<xs:element name="createNewStation" type="tns:createNewStation"/>
+
+<xs:element name="createNewStationResponse" type="tns:createNewStationResponse"/>
+
+<xs:element name="findProgramByStartBetween" type="tns:findProgramByStartBetween"/>
+
+<xs:element name="findProgramByStartBetweenResponse" type="tns:findProgramByStartBetweenResponse"/>
+
+<xs:element name="getAllStations" type="tns:getAllStations"/>
+
+<xs:element name="getAllStationsResponse" type="tns:getAllStationsResponse"/>
+
+<xs:complexType name="getAllStations">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllStationsResponse">
+<xs:sequence>
+<xs:element name="station" type="tns:station" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="station">
+<xs:sequence>
+<xs:element name="code" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createNewStation">
+<xs:sequence>
+<xs:element name="station" type="tns:station" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createNewStationResponse">
+<xs:sequence>
+<xs:element name="station" type="tns:station" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProgramByStartBetween">
+<xs:sequence>
+<xs:element name="startTimeFrom" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="startTimeTo" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProgramByStartBetweenResponse">
+<xs:sequence>
+<xs:element name="program" type="tns:program" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="program">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="station" type="tns:station" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createNewProgram">
+<xs:sequence>
+<xs:element name="program" type="tns:program" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createNewProgramResponse">
+<xs:sequence>
+<xs:element name="program" type="tns:program" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
