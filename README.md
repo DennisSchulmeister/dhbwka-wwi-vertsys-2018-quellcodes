@@ -1,10 +1,10 @@
-Aufgaben und Beispiele für die Vorlesung "Verteilte Systeme (2018 – 2019)"
-==========================================================================
+Quellcodes zur Vorlesung "Verteilte Systeme (2018 – 2019)"
+==========================================================
 
 Kurzbeschreibung
 ----------------
 
-Dieses Repository beinhaltet sämtliche Aufgabenblätter, Übungsaufgaben und
+Dieses Repository beinhaltet sämtliche Quellcodes der Übungsaufgaben und
 Beispielprojekte für die Vorlesung „Verteilte Systeme” (Jahrgänge 2018 bis 2019)
 im Studiengang Wirtschaftsinformatik an der DHBW Karlsruhe. Das Repository ist
 in folgende Bereiche gegliedert, analog zu den Vorlesungsfolien:
@@ -13,6 +13,10 @@ in folgende Bereiche gegliedert, analog zu den Vorlesungsfolien:
  * **2-javaee:** Enterprise Java Beans und Java Persistence API
  * **3-webservices:** SOAP- und REST-Webservices
  * **4-pubsub:** Publish / Subscribe mit MQTT
+
+Einige der Quellcodes sind in einem Aufgabenblatt beschrieben. Die dazugehörigen
+Aufgabenblätter befinden sich im Repository
+[dhbwka-wwi-vertsys-2018-aufgaben](https://github.com/DennisSchulmeister/dhbwka-wwi-vertsys-2018-aufgaben).
 
 Wichtiger Hinweis
 -----------------
